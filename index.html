@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Panida Muangcharoen | Data Analyst &amp; Business Analyst Intern</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="data analyst, business analyst intern, Power BI, SQL, business intelligence, dashboard developer, Mahasarakham University, digital business and information systems" name="keywords">
+    <meta content="Portfolio of Panida Muangcharoen — Data Analyst | Business Analyst Intern. Digital Business and Information Systems student turning business problems into data-driven insights with Power BI, SQL and Machine Learning." name="description">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Panida Muangcharoen | Data Analyst &amp; Business Analyst Intern">
+    <meta property="og:description" content="Business-oriented Data Analyst portfolio — dashboards, ML forecasting research and UX/business analysis projects.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Swiper.js — used for the scrollable Activities galleries (lightweight, ~35kb gzipped, no jQuery dependency) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- =====================================================================
+         Portfolio Custom Stylesheet
+         Sections: design tokens, hero, section rhythm, buttons, images,
+         skills, projects (equalized cards), activities (new), certifications
+         (new detailed grid), contact.
+         NOTE: original theme color (Bootstrap --bs-primary, set in css/style.css)
+         is intentionally kept unchanged — only layout/spacing/consistency
+         is improved per the brief.
+    ===================================================================== -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section[id],
+        div[id] {
+            scroll-margin-top: 95px;
+        }
+
+        /* =========================================================
+           1. DESIGN TOKENS
+           Centralising spacing/radius/shadow so every card, button
+           and image in the site references the same values instead
+           of ad-hoc numbers scattered through the markup.
+        ========================================================= */
+        :root {
+            --card-radius: 16px;
+            --card-padding: 32px;
+            --card-shadow: 0 10px 30px rgba(24, 29, 56, .08);
+            --card-shadow-hover: 0 20px 40px rgba(24, 29, 56, .14);
+            --card-border: 1px solid #eef1f7;
+            --section-gap: 5rem;
+        }
+
+        /* =========================================================
+           2. SECTION COLOR RHYTHM
+           Alternating background bands (White → Light → White → Light...)
+           so the page reads as clearly separated chapters.
+        ========================================================= */
+        .section-white { background-color: #ffffff; }
+        .section-tint  { background-color: #f7f9fc; }
+        .section-tint-blue { background-color: #eef3fb; }
+
+        /* =========================================================
+           3. TYPOGRAPHY / HIERARCHY
+        ========================================================= */
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--bs-primary);
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            font-weight: 800;
+            margin-bottom: .75rem;
+        }
+
+        .section-subheading {
+            color: #6b7280;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .section-head {
+            margin-bottom: 3rem;
+        }
+
+        /* =========================================================
+           4. HERO
+        ========================================================= */
+        .hero-section {
+            padding-top: 140px;
+            overflow: hidden;
+        }
+
+        .hero-photo-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-width: 420px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #eef1f7;
+        }
+
+        .hero-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        /* =========================================================
+           5. BUTTONS — consistent size, hover lift, aligned icons
+        ========================================================= */
+        .btn {
+            border-radius: 10px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+        }
+
+        .btn i, .btn .fa, .btn .fas, .btn .fab {
+            line-height: 1;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-info:hover,
+        .btn-outline-success:hover,
+        .btn-outline-warning:hover,
+        .btn-primary:hover {
+            box-shadow: 0 10px 20px rgba(24, 29, 56, .12);
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 13px;
+        }
+
+        /* =========================================================
+           6. IMAGES — same aspect ratio, cover fit, rounded, hover zoom
+        ========================================================= */
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
+        }
+
+        .img-zoom-wrap {
+            overflow: hidden;
+            border-radius: 14px;
+        }
+
+        .img-zoom-wrap:hover .img-cover {
+            transform: scale(1.08);
+        }
+
+        /* =========================================================
+           7. SKILLS
+        ========================================================= */
+        .skill-row .d-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-progress {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #eef1f7;
+        }
+
+        .skill-progress .progress-bar {
+            border-radius: 10px;
+            background-color: var(--bs-primary);
+        }
+
+        .pill-tag {
+            display: inline-block;
+            padding: 8px 18px;
+            margin: 0 8px 8px 0;
+            border-radius: 30px;
+            background: #eef1f7;
+            color: #181D38;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .pill-tag i {
+            color: var(--bs-primary);
+            margin-right: 6px;
+        }
+
+        .highlight-card {
+            background: #fff;
+            border: var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            height: 100%;
+            padding: 8px;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        /* =========================================================
+           8. PROJECTS — every card now shares ONE markup pattern
+           (.project-card-wrap > .project-card > .project-card-body)
+           so width, padding, margin, radius and shadow are identical
+           for every project regardless of how much text it contains.
+        ========================================================= */
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .project-card-wrap {
+            flex: 1 1 380px;
+            max-width: 420px;
+            display: flex;
+        }
+
+        .project-card {
+            background: #fff;
+            border: var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .project-card-body {
+            padding: var(--card-padding);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-meta-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--bs-primary);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .project-value-box {
+            background: #f7f9fc;
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-size: 14px;
+            margin: 0 0 16px;
+        }
+
+        .project-tools {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid #eef1f7;
+        }
+
+        .tool-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(var(--bs-primary-rgb), .1);
+            color: var(--bs-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 0 6px 6px 0;
+        }
+
+        /* =========================================================
+           9. ACTIVITIES — new section, one Swiper carousel per year
+        ========================================================= */
+        .activities-tabs .nav-link {
+            border-radius: 30px;
+            font-weight: 700;
+            padding: 10px 26px;
+            color: #181D38;
+            background: #fff;
+            border: var(--card-border);
+            margin: 0 6px 12px;
+        }
+
+        .activities-tabs .nav-link.active {
+            background: var(--bs-primary);
+            color: #fff;
+            border-color: var(--bs-primary);
+        }
+
+        .activity-swiper {
+            padding: 10px 4px 46px;
+        }
+
+        .activity-card {
+            background: #fff;
+            border: var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .activity-card-img {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, #eef1f7, #e3e9f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b7c0d6;
+            font-size: 30px;
+            overflow: hidden;
+        }
+
+        .activity-card-body {
+            padding: 18px 18px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .activity-card-body h6 {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .activity-card-body p {
+            font-size: 13px;
+            color: #6b7280;
+            flex-grow: 1;
+            margin-bottom: 14px;
+        }
+
+        .activity-card-body .btn {
+            align-self: flex-start;
+        }
+
+        /* Swiper navigation / pagination restyled to match theme */
+        .activity-swiper .swiper-button-next,
+        .activity-swiper .swiper-button-prev {
+            width: 38px;
+            height: 38px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: var(--card-shadow);
+            color: var(--bs-primary);
+        }
+
+        .activity-swiper .swiper-button-next::after,
+        .activity-swiper .swiper-button-prev::after {
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .activity-swiper .swiper-pagination-bullet-active {
+            background: var(--bs-primary);
+        }
+
+        /* =========================================================
+           10. CERTIFICATIONS
+        ========================================================= */
+        .cert-card {
+            background: #fff;
+            border: var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            padding: 28px 22px;
+            text-align: center;
+            height: 100%;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .cert-card i {
+            font-size: 34px;
+            color: var(--bs-primary);
+            margin-bottom: 16px;
+        }
+
+        /* Detailed certificate grid */
+        .cert-detail-card {
+            background: #fff;
+            border: var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            padding: 28px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .cert-detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .cert-detail-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(var(--bs-primary-rgb), .1);
+            color: var(--bs-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .cert-detail-card h6 {
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .cert-detail-org {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 2px;
+        }
+
+        .cert-detail-year {
+            font-size: 12px;
+            color: var(--bs-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: 16px;
+        }
+
+        .cert-detail-card .cert-btn-row {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* =========================================================
+           11. CONTACT
+        ========================================================= */
+        .contact-card {
+            background: #fff;
+            border: var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            padding: 26px;
+            text-align: center;
+            height: 100%;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .contact-card i {
+            font-size: 26px;
+            color: var(--bs-primary);
+            margin-bottom: 12px;
+        }
+
+        /* =========================================================
+           12. GALLERY MODAL (Activities "View Images")
+        ========================================================= */
+        #activityGalleryModal .modal-content {
+            border-radius: var(--card-radius);
+            border: none;
+        }
+
+        #activityGalleryModal .gallery-slide {
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #eef1f7, #e3e9f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9aa5bd;
+            font-size: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarCollapse" data-bs-offset="120" tabindex="0">
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="#home" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-chart-line me-3"></i>Panida M.</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="#home" class="nav-item nav-link">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#education" class="nav-item nav-link">Education</a>
+                <a href="#skills" class="nav-item nav-link">Skills</a>
+                <a href="#projects" class="nav-item nav-link">Projects</a>
+                <a href="#activities" class="nav-item nav-link">Activities</a>
+                <a href="#certifications" class="nav-item nav-link">Certifications</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="https://drive.google.com/file/d/1eEUaoPKYzTMn-HgcvZkL-PzrHrxiyIJd/view?usp=drive_link" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Download Resume<i class="fa fa-arrow-down ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start (section-white) -->
+    <div class="container-xxl hero-section pb-5 section-white" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary text-uppercase mb-3">Data Analyst | Business Analyst Intern</h5>
+                    <h1 class="display-4 mb-4">I'm Panida Muangcharoen</h1>
+                    <p class="fs-5 mb-4 pb-2">As a senior Digital Business and Information Systems student, I am passionate about transforming raw data into actionable business insights. I leverage my experience in Machine Learning, Business Intelligence, and dashboard development to solve complex business problems.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://drive.google.com/file/d/17KW53aan5bJwFRk8XcIPhOy5vcznuD3C/view?usp=drive_link" class="btn btn-primary py-3 px-5">Download Transcript</a>
+                        <a href="https://drive.google.com/file/d/1eEUaoPKYzTMn-HgcvZkL-PzrHrxiyIJd/view?usp=drive_link" class="btn btn-outline-primary py-3 px-5">Download Resume</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="hero-photo-wrap img-zoom-wrap">
+                        <!-- TODO: replace with your headshot -->
+                        <img class="img-cover" src="profile.jpg" alt="Panida Muangcharoen">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- About Start (section-white) -->
+    <div class="container-xxl py-5 section-white" id="about">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100 img-zoom-wrap rounded">
+                    <img class="img-cover" src="about me.jpg" alt="Panida Muangcharoen">                    </div>
+                </div>
+            <div  class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="section-title bg-white text-center text-primary px-3">About Me</h1>
+                <h3 class="mb-5">Turning data into decisions</h3>
+                 <p class="mb-4">I am a senior Digital Business and Information Systems student dedicated to leveraging Data Analytics and Business Intelligence to drive smarter business decisions. I thrive on transforming complex, raw data into meaningful, actionable insights. With a solid foundation built through academic research and hands-on projects, my expertise spans Machine Learning, dashboard development, system analysis, and UX/UI design. I am constantly sharpening my analytical mindset and actively seeking opportunities to deliver value in a real-world business environment </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Education Start (section-tint) -->
+    <div class="container-xxl py-5 section-tint" id="education">
+        <div class="container">
+            <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="section-title bg-white text-center text-primary px-3">EDUCATION</h1>
+                <h3 class="section-heading">Academic Background</h3>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-graduation-cap"></i></div>
+                        <h6>Bachelor of Business Administration — Digital Business and Information Systems</h6>
+                        <p class="cert-detail-org mb-0">Mahasarakham Business School (MBS), Mahasarakham University</p>
+                        <p class="cert-detail-year">Expected Graduation: 2027 &middot; GPAX: 3.53</p>
+                        <p class="mb-0">
+                            Relevant coursework: Business Intelligence, Database Management,
+                            Data Analytics, Systems Analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Education End -->
+
+    <div class="container-xxl py-5 section-tint" id="skills">
+        <div class="container">
+            <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">
+                 <h1 class="section-title bg-white text-center text-primary px-3">SKILLS</h1>
+                <h3 class="section-heading">Technical Skills</h3>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="highlight-card">
+                        <div class="service-item text-center pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-briefcase text-primary mb-4"></i>
+                                <h5 class="mb-3">Altair AI Studio</h5>
+                                <p class="mb-0">Built Neural Network, Random Forest, and Gradient Boosting models with 10-fold CV - AUCC 2026 research.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="highlight-card">
+                        <div class="service-item text-center pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-chart-pie text-primary mb-4"></i>
+                                <h5 class="mb-3">Power BI</h5>
+                                <p class="mb-0">Developed real-time clinical ICU dashboard for medical decision support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="highlight-card">
+                        <div class="service-item text-center pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-database text-primary mb-4"></i>
+                                <h5 class="mb-3">SQL</h5>
+                                <p class="mb-0">Data extraction, cleaning, and transformation for analytical pipelines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="highlight-card">
+                        <div class="service-item text-center pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-pencil-ruler text-primary mb-4"></i>
+                                <h5 class="mb-3">Figma</h5>
+                                <p class="mb-0">UX/UI design and Interactive Prototype development for research projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="highlight-card">
+                        <div class="service-item text-center pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-file-alt text-primary mb-4"></i>
+                                <h5 class="mb-3">Word/PowerPoint/Canva</h5>
+                                <p class="mb-0">Academic reports, research posters, and presentations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft skills -->
+              <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">
+                <h3 class="section-heading">Soft skills</h3>
+            </div>
+            <div class="text-center">
+                <span class="pill-tag"><i class="fa fa-brain"></i> Analytical Thinking</span>
+                <span class="pill-tag"><i class="fa fa-users"></i> Teamwork &amp; Collaboration</span>
+                <span class="pill-tag"><i class="fa fa-graduation-cap"></i> Adaptability &amp; Eagerness to Learn</span>
+                <span class="pill-tag"><i class="fa fa-shield-alt"></i> Accountability</span>
+                <span class="pill-tag"><i class="fa fa-clock"></i> Time Management</span>
+                <span class="pill-tag"><i class="fa fa-mountain"></i> Resilience</span>
+            </div>
+        </div>
+    </div>
+    <!-- Skills End -->
+
+
+    <div class="container-xxl py-5 section-white" id="projects">
+        <div class="container">
+            <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">
+                 <h1 class="section-title bg-white text-center text-primary px-3">PORTFOLIO</h1>
+                <h3 class="section-heading">Projects &amp; Research</h3>
+                <p class="section-subheading mx-auto">A selection of data, BI and UX work — from award-winning research to production-style dashboards.</p>
+            </div>
+
+            <div class="project-grid">
+
+                <!-- Project 1: AUCC 2026 -->
+                <div class="project-card-wrap wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="project-card">
+                        <div class="project-card-body">
+
+                            <h4 class="mb-3">
+                                AUCC 2026 <br>
+                                Machine Learning Export Forecasting
+                            </h4>
+
+                            <p class="text-muted mb-4">
+                                Forecasting Thailand's Electrical &amp; Electronic export value
+                                using Machine Learning and macroeconomic indicators.
+                            </p>
+
+                            <!-- Key Statistics -->
+                            <div class="row text-center mb-4">
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">42</h5>
+                                    <small>Months</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">8</h5>
+                                    <small>Sources</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">3</h5>
+                                    <small>ML Models</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-success mb-0">99.60%</h5>
+                                    <small>R²</small>
+                                </div>
+                            </div>
+
+                            <!-- Contributions -->
+                            <h6 class="text-uppercase text-primary mb-3">Key Contributions</h6>
+                            <ul class="small ps-3 mb-4">
+                                <li>Analyzed 42 months of macroeconomic data from 8 sources.</li>
+                                <li>Developed and compared 3 Machine Learning models using Altair AI Studio.</li>
+                                <li>Applied 10-fold Cross Validation for reliable model evaluation.</li>
+                                <li>Presented the research at AUCC 2026 and received a <strong>Very Good</strong> evaluation.</li>
+                            </ul>
+
+                            <!-- Highlight -->
+                            <div class="project-value-box">
+                                <h6 class="text-primary mb-2"><i class="fa fa-trophy"></i> Result</h6>
+                                <p class="mb-0">
+                                    Neural Network achieved the highest performance
+                                    (<strong>R² = 99.60%</strong>),
+                                    outperforming Random Forest and Gradient Boosting.
+                                </p>
+                            </div>
+
+                            <!-- Business Value -->
+                            <div class="project-value-box">
+                                <h6 class="text-primary mb-2"><i class="fa fa-chart-line"></i> Business Value</h6>
+                                <p class="mb-0">
+                                    Supports more accurate export demand forecasting,
+                                    enabling better production planning and business decision-making.
+                                </p>
+                            </div>
+
+                            <!-- Supporting Documents -->
+                            <div class="mb-4">
+                                <h6 class="text-primary mb-3">Supporting Documents</h6>
+                                <a href="https://drive.google.com/file/d/1ElItf4X3Ld8S7g9QzNDIVvXwKh45WuVE/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                                    <i class="fa fa-file-pdf"></i> Research Paper
+                                </a>
+                                <a href="https://drive.google.com/file/d/18xIHA-n-DD0a4TuZyBhhrgTOESPqT9WN/view?usp=drive_link" target="_blank" class="btn btn-outline-success btn-sm me-2 mb-2">
+                                    <i class="fa fa-image"></i> Research Poster
+                                </a>
+                                <a href="https://drive.google.com/file/d/1Ymi3ZMIdKZlgLeNXB7IO043IfPZpch8k/view?usp=drive_link" target="_blank" class="btn btn-outline-warning btn-sm mb-2">
+                                    <i class="fa fa-award"></i> Certificate
+                                </a>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="project-tools d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary">Altair AI Studio</span>
+                                <span class="badge bg-success">Machine Learning</span>
+                                <span class="badge bg-info text-dark">Forecasting</span>
+                                <span class="badge bg-secondary">Excel</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Power BI -->
+                <div class="project-card-wrap wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="project-card">
+                        <div class="project-card-body">
+
+                            <h4 class="mb-3">
+                                Power BI <br>
+                                Healthcare Business Intelligence Dashboard ICU Clinical &amp; Operational Analytics
+                            </h4>
+
+                            <p class="text-muted mb-4">
+                                Developed an interactive Business Intelligence dashboard integrating operational and clinical ICU data to support healthcare professionals in monitoring patient information and making data-driven decisions.
+                            </p>
+
+                            <!-- Key Statistics -->
+                            <div class="row text-center mb-4">
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">7</h5>
+                                    <small>Sections</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">21</h5>
+                                    <small>Graphs</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">245</h5>
+                                    <small>Patients</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-success mb-0">Power BI</h5>
+                                    <small>Platform</small>
+                                </div>
+                            </div>
+
+                            <!-- Key Contributions -->
+                            <h6 class="text-uppercase text-primary mb-3">Key Contributions</h6>
+                            <ul class="small ps-3 mb-4">
+                                <li>Designed and developed interactive Operational and Clinical dashboards using Power BI.</li>
+                                <li>Integrated ICU operational and clinical datasets into a centralized analytics dashboard.</li>
+                                <li>Created KPI cards, trend analysis, drill-down, and interactive filtering for data exploration.</li>
+                                <li>Visualized ICU utilization, mortality rate, vital signs, laboratory results, and disease trends.</li>
+                            </ul>
+
+                            <!-- Result -->
+                            <div class="project-value-box">
+                                <h6 class="text-primary mb-2"><i class="fa fa-chart-bar"></i> Result</h6>
+                                <p class="mb-0">
+                                    Successfully developed an interactive dashboard that consolidates operational and clinical ICU data into a single platform, improving information accessibility and monitoring efficiency.
+                                </p>
+                            </div>
+
+                            <!-- Business Value -->
+                            <div class="project-value-box">
+                                <h6 class="text-primary mb-2"><i class="fa fa-chart-line"></i> Business Value</h6>
+                                <p class="mb-0">
+                                    Supports healthcare professionals with centralized insights for patient monitoring, resource management, and faster evidence-based clinical decision-making.
+                                </p>
+                            </div>
+
+                            <!-- Supporting Documents -->
+                            <div class="mb-4">
+                                <h6 class="text-primary mb-3">Supporting Documents</h6>
+                                <a href="https://drive.google.com/file/d/1Xc7iygQXqmGc-fgK2PUjWto4WFXq0mli/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                                    <i class="fa fa-file-pdf"></i> Project
+                                </a>
+                                <a href="https://drive.google.com/file/d/1z0iuL_fVcPTHQLrt8_HZ-4SYdJPRBv0n/view?usp=drive_link" target="_blank" class="btn btn-outline-info btn-sm me-2 mb-2">
+                                    <i class="fa fa-file-pdf"></i> Clean data
+                                </a>
+                                <a href="https://drive.google.com/file/d/1FRxIkgdQEmSuI_DEvOMaguaEr74EZXkH/view?usp=drive_link" target="_blank" class="btn btn-outline-success btn-sm mb-2">
+                                    <i class="fa fa-image"></i> Dashboard Screenshots
+                                </a>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="project-tools d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary">Power BI</span>
+                                <span class="badge bg-success">Power Query</span>
+                                <span class="badge bg-info text-dark">DAX</span>
+                                <span class="badge bg-warning text-dark">Data Visualization</span>
+                                <span class="badge bg-secondary">Healthcare Analytics</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Local Food Delivery UX/UI -->
+                <div class="project-card-wrap wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="project-card">
+                        <div class="project-card-body">
+
+                            <h4 class="mb-3">
+                                Local-Centric Food Delivery Platform <br>
+                                UX/UI Design Research (Ongoing)
+                            </h4>
+
+                            <p class="text-muted mb-4">
+                                Designing a hyperlocal food delivery platform for Maha Sarakham to
+                                improve ordering experiences, reduce platform fees, and support local businesses
+                                through a user-centered design approach.
+                            </p>
+
+                            <!-- Key Statistics -->
+                            <div class="row text-center mb-4">
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">30</h5>
+                                    <small>Participants</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">3</h5>
+                                    <small>Stakeholders</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-primary mb-0">Figma</h5>
+                                    <small>Tool</small>
+                                </div>
+                                <div class="col-3">
+                                    <h5 class="text-warning mb-0">Ongoing</h5>
+                                    <small>Status</small>
+                                </div>
+                            </div>
+
+                            <!-- Current Progress -->
+                            <h6 class="text-uppercase text-primary mb-3">Current Progress</h6>
+                            <ul class="small ps-3 mb-4">
+                                <li>Defined research objectives and UX methodology for a local-centric food delivery platform.</li>
+                                <li>Designed questionnaires, interview guides, and usability testing plan.</li>
+                                <li>Prepared user research involving customers, restaurants, and delivery riders.</li>
+                                <li>Planning persona, user journey mapping, wireframes, and interactive prototypes in Figma.</li>
+                            </ul>
+
+                            <!-- Current Status -->
+                            <div class="project-value-box">
+                                <h6 class="text-primary mb-2"><i class="fa fa-hourglass-half"></i> Current Status</h6>
+                                <p class="mb-0">
+                                    Research proposal completed. The project is currently in the user research
+                                    and interview phase to collect insights for UX/UI design.
+                                </p>
+                            </div>
+
+                            <!-- Expected Business Value -->
+                            <div class="project-value-box">
+                                <h6 class="text-primary mb-2"><i class="fa fa-chart-line"></i> Expected Business Value</h6>
+                                <p class="mb-0">
+                                    Improve user experience, reduce delivery costs, support local restaurants,
+                                    and provide a scalable digital platform for community-based food delivery services.
+                                </p>
+                            </div>
+
+                            <!-- Supporting Documents -->
+                            <div class="mb-4">
+                                <h6 class="text-primary mb-3">Supporting Documents</h6>
+                                <a href="https://drive.google.com/file/d/1SACdAh03tdEkL188f0UE-XRLuqAXYP7v/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm me-2 mb-2">
+                                    <i class="fa fa-file-pdf"></i> Research Proposal
+                                </a>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="project-tools d-flex flex-wrap gap-2">
+                                <span class="badge bg-primary">UX Research</span>
+                                <span class="badge bg-success">Figma</span>
+                                <span class="badge bg-info text-dark">User Interview</span>
+                                <span class="badge bg-warning text-dark">Wireframe</span>
+                                <span class="badge bg-secondary">Prototype</span>
+                                <span class="badge bg-danger">Usability Testing</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.project-grid -->
+        </div>
+    </div>
+    <!-- Projects End -->
+
+
+    <!-- ==========================================================
+         Activities Start (section-tint) — NEW SECTION
+         4 year tabs (2023–2026), each rendered as its own Swiper
+         carousel of placeholder activity cards. Replace the
+         placeholder cover box + copy in each .activity-card with
+         real content; each card's "View Images" button opens a
+         shared gallery modal (wire up real photos via the
+         data-images attribute — see the JS comment near the modal).
+    =========================================================== -->
+    <div class="container-xxl py-5 section-tint" id="activities">
+        <div class="container">
+            <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="section-title bg-white text-center text-primary px-3">ACTIVITIES</h1>
+                <h3 class="section-heading">Beyond the Classroom</h3>
+                <p class="section-subheading mx-auto">University, faculty and community activities from 2023 to 2026. Browse each year's gallery below.</p>
+            </div>
+
+            <!-- Year Tabs -->
+            <ul class="nav activities-tabs justify-content-center mb-4" id="activityYearTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-2026" data-bs-toggle="tab" data-bs-target="#year-2026" type="button" role="tab">2026</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-2025" data-bs-toggle="tab" data-bs-target="#year-2025" type="button" role="tab">2025</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-2024" data-bs-toggle="tab" data-bs-target="#year-2024" type="button" role="tab">2024</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-2023" data-bs-toggle="tab" data-bs-target="#year-2023" type="button" role="tab">2023</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <!-- Each of the 4 panes below is intentionally identical in structure;
+                     only the data-year attribute changes, so JS below can build one
+                     Swiper carousel per pane automatically. -->
+                <div class="tab-pane fade show active" id="year-2026" role="tabpanel" data-year="2026"></div>
+                <div class="tab-pane fade" id="year-2025" role="tabpanel" data-year="2025"></div>
+                <div class="tab-pane fade" id="year-2024" role="tabpanel" data-year="2024"></div>
+                <div class="tab-pane fade" id="year-2023" role="tabpanel" data-year="2023"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Activities End -->
+
+    <!-- Shared Activity Gallery Modal -->
+    <div class="modal fade" id="activityGalleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title" id="activityGalleryTitle">Activity Images</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="activityGalleryCarousel" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-inner" id="activityGalleryInner"><!-- slides injected by JS --></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#activityGalleryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#activityGalleryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Certifications Start (section-white) -->
+    <div class="container-xxl py-5 section-white" id="certifications">
+        <div class="container">
+
+            <!-- Original quick-glance summary — kept in its original format as requested -->
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="section-title bg-white text-center text-primary px-3">Certifications &amp; Awards</h1>
+                <h3 class="mb-5">Recognition &amp; Learning</h3>
+            </div>
+            <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">
+                <p class="section-subheading mx-auto">Every certificate opens the original PDF in a new tab.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- 1. AUCC 2026 Award -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-trophy"></i></div>
+                        <h6>AUCC 2026 Poster Presentation Award</h6>
+                        <p class="cert-detail-org mb-0">Asia Undergraduate Conference on Computing (AUCC) / EEAAT</p>
+                        <p class="cert-detail-year">2026 · Very Good</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/1OWmEgkE3qJzGM3RzCot09Kf3zJmInnZP/view?usp=drive_link"_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Gemini Certified Educator -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-brain"></i></div>
+                        <h6>Gemini Certified Educator</h6>
+                        <p class="cert-detail-org mb-0">Google for Education</p>
+                        <p class="cert-detail-year">2026</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/1tqr2dY8Gb-5ILrdX-aFxLQjCwEf2wgoN/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. IC3 Digital Literacy -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-laptop-code"></i></div>
+                        <h6>IC3 Digital Literacy Certification — GS6 Level 1</h6>
+                        <p class="cert-detail-org mb-0">Certiport, a Pearson VUE business</p>
+                        <p class="cert-detail-year">2025</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/1qn6uUGOlK5TkIT_al6JfNtGMEO2Xec5W/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                            <a href="https://drive.google.com/file/d/1mAOk6sT2Ib0zKqwyYCcbFcZ8iM4EL_-V/view?usp=drive_link">
+                                <i class="fa fa-chart-bar"></i> Score Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Responsive Web Design (Thai MOOC) -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-mobile-alt"></i></div>
+                        <h6>Responsive Web Design and Development for Mobile Device</h6>
+                        <p class="cert-detail-org mb-0">Rajamangala University of Technology Isan · Thai MOOC</p>
+                        <p class="cert-detail-year">2025</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/19enhwFyeMCG42f2UcUgRJtaWWx2azrfD/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Microsoft Power BI (TPQI) -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-chart-bar"></i></div>
+                        <h6>Microsoft Power BI</h6>
+                        <p class="cert-detail-org mb-0">Thailand Professional Qualification Institute (TPQI)</p>
+                        <p class="cert-detail-year">2025</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/1ekbIXwSZ8op8rmhZ3VcndIGpmUKtJ1aT/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Generative AI & ChatGPT (KUMOOC) -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-robot"></i></div>
+                        <h6>Generative AI and the Use of ChatGPT for Research</h6>
+                        <p class="cert-detail-org mb-0">Kasetsart University (KUMOOC)</p>
+                        <p class="cert-detail-year">2025</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/1e7dc4wNZBmVttqIXdcgE9lsy2wwh-mBF/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. From Prompt to Process (MSU Library) -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="cert-detail-card">
+                        <div class="cert-detail-icon"><i class="fa fa-graduation-cap"></i></div>
+                        <h6>From Prompt to Process: Elevating GenAI to AI Automation for Higher Education Learning</h6>
+                        <p class="cert-detail-org mb-0">Office of Academic Resources, Mahasarakham University</p>
+                        <p class="cert-detail-year">2026</p>
+                        <div class="cert-btn-row">
+                            <a href="https://drive.google.com/file/d/1PG3vI3E228toSA149JenMUe48vm2w2Vg/view?usp=drive_link" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa fa-file-pdf"></i> View Certificate (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Certifications End -->
+
+
+    <!-- Contact Start (section-tint-blue) -->
+    <div class="container-xxl py-5 section-tint-blue" id="contact">
+        <div class="container">
+            <div class="text-center section-head wow fadeInUp" data-wow-delay="0.1s">>
+                <h1 class="section-title bg-white text-center text-primary px-3">CONTACT</h1>
+                <h3 class="section-heading">Let's Work Together</h3>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="contact-card">
+                        <i class="fa fa-envelope"></i>
+                        <h6 class="mb-2">Email</h6>
+                        <a href="mailto:panida.mjr@mail.com" class="text-muted">panida.mjr@mail.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="contact-card">
+                        <i class="fa fa-phone-alt"></i>
+                        <h6 class="mb-2">Phone</h6>
+                        <a href="tel:+66948378034" class="text-muted">+66 94 837 8034</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="contact-card">
+                        <i class="fab fa-linkedin-in"></i>
+                        <h6 class="mb-2">LinkedIn</h6>
+                        <!-- TODO: replace with your LinkedIn URL -->
+                        <a href="https://www.linkedin.com/in/panida-muangcharoen-172542422/" class="text-muted">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <h6 class="mb-2">GitHub</h6>
+                        <a href="https://github.com/panidamjr-wq" class="text-muted">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                    <h4 class="text-white mb-2">Panida Muangcharoen</h4>
+                    <p class="mb-0">Data Analyst | Business Analyst Intern — Maha Sarakham, Thailand</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-md-end pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://linkedin.com/in/your-profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://github.com/your-username"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="mailto:panida.muang@example.com"><i class="fa fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#home">Panida Muangcharoen</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
+                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#projects">Projects</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#home" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- ==========================================================
+         Activities data + builder + gallery modal wiring
+         =====================================================
+         HOW TO ADD YOUR OWN PHOTOS / EDIT ACTIVITIES
+         =====================================================
+         1. Put your image files somewhere next to this index.html,
+            e.g.  /activities/2026/open-house-cover.jpg
+                  /activities/2026/open-house-1.jpg, -2.jpg, -3.jpg ...
+         2. Find ACTIVITIES_DATA below. It is one JavaScript object,
+            one array per year. Each array item = one activity card:
+              {
+                title: "Open House 2025 Activity",
+                description: "Helping with faculty public relations",
+                cover: "activities/2026/open-house-cover.jpg",
+                images: [
+                  "activities/2026/open-house-1.jpg",
+                  "activities/2026/open-house-2.jpg"
+                ]
+              }
+            - "cover"  = the picture shown on the card itself.
+            - "images" = ALL the pictures shown when someone clicks
+              "View Images" (can be 1 photo or many).
+         3. To add a new activity: copy one {...} block and paste it
+            into that year's array (comma-separated).
+         4. To remove the unused placeholder activities: just delete
+            their {...} blocks from the array.
+         5. Leaving "cover" or an "images" entry empty ("") keeps the
+            grey placeholder box so you can fill it in later.
+         No other part of the code needs to change — cards, the
+         Swiper carousel (Desktop 5/row · Tablet 3/row · Mobile 2/row)
+         and the gallery modal are all generated automatically from
+         this data.
+    =========================================================== -->
+    <script>
+        (function () {
+
+            // ===== EDIT YOUR ACTIVITIES HERE =====
+            var ACTIVITIES_DATA = {
+                "2026": [
+                    {
+                        title: "Grad MSU Inter Club: First Meet & Greet",
+                        description: "I served as a student volunteer and participated in activities alongside international students and students from other faculties.",
+                        cover: "activities/2026/1.19-1-2026.jpg",
+                        images: ["activities/2026/1.19-1-2026.jpg","activities/2026/19-1-2026.jpg", "activities/2026/2.19-1-2026.jpg", "activities/2026/4.19-1-2026.jpg", "activities/2026/3.19-1-2026.jpg", "activities/2026/19-1-2026.jpg"]
+                    },
+                    {
+                        title: "The 14th Asian Undergraduate Conference on Computing (AUCC 2026)",
+                        description: "Presented original research as a poster and received a Very Good Award.",
+                        cover: "activities/2026/4-2-2026.jpg",
+                        images: ["activities/2026/4-2-2026.jpg","activities/2026/4.4-2-2026.jpg", "activities/2026/1.4-2-2026.jpg", "activities/2026/2.4-2-2026.jpg"]
+                    },
+                    { 
+                        title: "Sampao Fah Games (Inter-Faculty Sports) No. 31, Academic Year 2025.",
+                        description: "Served as a student volunteer marching in the opening parade.",
+                        cover: "activities/2026/7-2-2026.jpg",
+                        images: ["activities/2026/7-2-2026.jpg"]
+                    },
+                    { 
+                        title: "EndNote / iThesis Research Information Literacy Training.",
+                        description: "Served as a student volunteer helping organize the hands-on training workshop.",
+                        cover: "activities/2026/4-7-2026.jpg",
+                        images: ["activities/2026/4-7-2026.jpg","activities/2026/1.4-7-2026.jpg"]
+                    },
+                    { 
+                        title: "Training: From Prompt to Process — Elevating GenAI to AI Automation for Higher Education Learning.",
+                        description: "Attended the training to build knowledge of Generative AI and ChatGPT for higher-education teaching and learning.",
+                        cover: "activities/2026/8-7-2026.jpg",
+                        images: ["activities/2026/8-7-2026.jpg","activities/2026/1.8-7-2026.jpg"]
+                    }
+                ],
+                "2025":  [
+                    {
+                        title: "Sampao Fah Games (Inter-Faculty Sports) No. 30, Academic Year 2025.",
+                        description: "Served as a student volunteer supervising the cheering stand, coordinating rehearsals and managing both the stand members and the cheer team.",
+                        cover: "activities/2025/1.1-2-2025.jpg",
+                        images: ["activities/2025/1.1-2-2025.jpg","activities/2025/1-2-2025.jpg", "activities/2025/2.1-2-2025.jpg"]
+                    },
+                    {
+                        title: "Selected Student Representative for the Royal Garland Presentation, Mahasarakham University Commencement Ceremony, Academic Year 2023.",
+                        description: "Served as an undergraduate student representative in the royal garland presentation ceremony.",
+                        cover: "activities/2025/16-5-2025.jpg",
+                        images: ["activities/2025/16-5-2025.jpg", "activities/2025/1.16-5-2025.jpg", "activities/2025/2.16-5-2025.jpg", "activities/2025/3.16-5-2025.jpg"]
+                    },
+                    { 
+                        title: "10th Graduate Studies Sports Relations Games — \"Universe of Learning and Friendship\"",
+                        description: "Served as a student volunteer, carrying the faculty emblem tray in the opening parade; helped set up the venue and rehearse the parade beforehand.",
+                        cover: "activities/2025/2-8-2025.jpg",
+                        images: ["activities/2025/2-8-2025.jpg", "activities/2025/1.2-8-2025.jpg", "activities/2025/2.2-8-2025.jpg"]
+                    },
+                    { 
+                        title: "Wai Khru (Teacher Homage) Ceremony, Mahasarakham Business School (MBS), Academic Year 2025.",
+                        description: "Served as class representative presenting the ceremonial tray to the faculty.",
+                        cover: "activities/2025/7-8-2025.jpg",
+                        images: ["activities/2025/7-8-2025.jpg", "activities/2025/1.7-8-2025.jpg", "activities/2025/2.7-8-2025.jpg"]
+                    },
+                    { 
+                        title: " Academic Seminar: EduTech for Thailand's Future — Empowering Smart Learning with Cybersecurity & AI",
+                        description: "Attended the lectures and knowledge-sharing sessions on education technology and cybersecurity, and toured the exhibition.",
+                        cover: "activities/2025/3-10-2025.jpg",
+                        images: ["activities/2025/3-10-2025.jpg","activities/2025/2.3-10-2025.jpg", "activities/2025/1.3-10-2025.jpg"]
+                    }
+                ],
+                "2024": [
+                     { 
+                        title: "Tum Home Huam Jai: Freshman Welcome Camp, MBS Phumarin 13",
+                        description: "Served as a station demonstrator welcoming new students, leading dancing, singing, and game activities.",
+                        cover: "activities/2024/5-7-2024.jpg",
+                        images: ["activities/2024/5-7-2024.jpg", "activities/2024/1.5-7-2024.jpg", "activities/2024/2.5-7-2024.jpg", "activities/2024/3.5-7-2024.jpg"]
+                    },
+                    { 
+                        title: "Workshop: Sales Growth Strategy for Business Using LINE Official Account (LINE OA)",
+                        description: "Attended the workshop to build knowledge of online marketing and using LINE OA to increase business sales.",
+                        cover: "activities/2024/14-12-2024.jpg",
+                        images: ["activities/2024/14-12-2024.jpg", "activities/2024/1.14-12-2024.jpg"]
+                    },
+                    { 
+                        title: "Mahasarakham University Open House, Academic Year 2024",
+                        description: "Served as a student volunteer preparing the venue and assisting visitors and exhibition guests; advised prospective students and parents on the programs and activities of the Faculty of Accountancy and Management.",
+                        cover: "activities/2024/22-12-2024.jpg",
+                        images: ["activities/2024/22-12-2024.jpg", "activities/2024/1.22-12-2024.jpg"]
+                    }
+                ],
+                "2023": [
+                    { 
+                        title: "Tum Home Huam Jai: Freshman Welcome Activity, MBS Jamaree 13",
+                        description: "Took part in the faculty's freshman welcome activities — singing, dancing, and games — to build relationships between seniors, freshmen, and peers from other majors.",
+                        cover: "activities/2023/10-7-2023.jpg",
+                        images: ["activities/2023/10-7-2023.jpg"]
+                    }
+                ]
+            };
+            // ======================================
+
+            // Generates 10 empty placeholder activities for a year.
+            // (Only used above to seed the demo — replace/edit the
+            // objects inside ACTIVITIES_DATA directly once you have
+            // real content; you can delete this helper function too.)
+            function buildPlaceholders(year, count) {
+                var list = [];
+                for (var i = 1; i <= count; i++) {
+                    list.push({
+                        title: "Activity " + i + " — " + year + " Placeholder",
+                        description: "Short description goes here (1–2 lines about this activity).",
+                        cover: "", // e.g. "activities/" + year + "/activity-" + i + "-cover.jpg"
+                        images: [] // e.g. ["activities/" + year + "/activity-" + i + "-1.jpg", "...-2.jpg"]
+                    });
+                }
+                return list;
+            }
+
+            // Returns either a real <img>, or the grey placeholder box, for a cover photo
+            function coverHtml(src) {
+                if (src) {
+                    return '<img class="img-cover" src="' + src + '" alt="">';
+                }
+                return '<i class="fa fa-image"></i>';
+            }
+
+            // 1. Build one card per activity, into each year's tab pane
+            Object.keys(ACTIVITIES_DATA).forEach(function (year) {
+                var pane = document.querySelector('#year-' + year);
+                if (!pane) return;
+
+                var activities = ACTIVITIES_DATA[year];
+
+                var swiperWrap = document.createElement('div');
+                swiperWrap.className = 'swiper activity-swiper';
+                swiperWrap.id = 'swiper-' + year;
+
+                var track = document.createElement('div');
+                track.className = 'swiper-wrapper';
+
+                activities.forEach(function (activity, index) {
+                    var slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    slide.innerHTML =
+                        '<div class="activity-card">' +
+                        '  <div class="activity-card-img">' + coverHtml(activity.cover) + '</div>' +
+                        '  <div class="activity-card-body">' +
+                        '    <h6>' + activity.title + '</h6>' +
+                        '    <p>' + activity.description + '</p>' +
+                        '    <button type="button" class="btn btn-outline-primary btn-sm view-images-btn" ' +
+                        '      data-year="' + year + '" data-index="' + index + '">' +
+                        '      <i class="fa fa-images"></i> View Images' +
+                        '    </button>' +
+                        '  </div>' +
+                        '</div>';
+                    track.appendChild(slide);
+                });
+
+                swiperWrap.appendChild(track);
+
+                var pagination = document.createElement('div');
+                pagination.className = 'swiper-pagination';
+                swiperWrap.appendChild(pagination);
+
+                var prevBtn = document.createElement('div');
+                prevBtn.className = 'swiper-button-prev';
+                swiperWrap.appendChild(prevBtn);
+
+                var nextBtn = document.createElement('div');
+                nextBtn.className = 'swiper-button-next';
+                swiperWrap.appendChild(nextBtn);
+
+                pane.appendChild(swiperWrap);
+            });
+
+            // 2. Initialize one Swiper instance per year (after DOM is built)
+            Object.keys(ACTIVITIES_DATA).forEach(function (year) {
+                new Swiper('#swiper-' + year, {
+                    slidesPerView: 1.3,
+                    spaceBetween: 18,
+                    pagination: { el: '#swiper-' + year + ' .swiper-pagination', clickable: true },
+                    navigation: {
+                        nextEl: '#swiper-' + year + ' .swiper-button-next',
+                        prevEl: '#swiper-' + year + ' .swiper-button-prev'
+                    },
+                    breakpoints: {
+                        // Mobile: 1–2 per row
+                        480: { slidesPerView: 2, spaceBetween: 16 },
+                        // Tablet: 3 per row
+                        768: { slidesPerView: 3, spaceBetween: 18 },
+                        // Desktop: 5 per row
+                        1200: { slidesPerView: 5, spaceBetween: 20 }
+                    }
+                });
+            });
+
+            // 3. Gallery modal — builds slides from activity.images (or a
+            //    single placeholder slide if no images were set yet)
+            function buildGallerySlides(images) {
+                if (!images || images.length === 0) {
+                    return '<div class="carousel-item active"><div class="gallery-slide">No images added yet</div></div>';
+                }
+                return images.map(function (src, i) {
+                    return '<div class="carousel-item' + (i === 0 ? ' active' : '') + '">' +
+                        '<img class="img-cover w-100" style="aspect-ratio:16/10;border-radius:10px;" src="' + src + '" alt="">' +
+                        '</div>';
+                }).join('');
+            }
+
+            document.addEventListener('click', function (e) {
+                var btn = e.target.closest('.view-images-btn');
+                if (!btn) return;
+
+                var year = btn.getAttribute('data-year');
+                var index = parseInt(btn.getAttribute('data-index'), 10);
+                var activity = ACTIVITIES_DATA[year][index];
+
+                document.getElementById('activityGalleryTitle').textContent = activity.title;
+                document.getElementById('activityGalleryInner').innerHTML = buildGallerySlides(activity.images);
+
+                var modal = new bootstrap.Modal(document.getElementById('activityGalleryModal'));
+                modal.show();
+            });
+        })();
+    </script>
+</body>
+
+</html>
